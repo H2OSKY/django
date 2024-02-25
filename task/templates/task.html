@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center">Task pending</h1>
+
+{% for task in tasks %}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        {% load static %}
+                        <img class="img-fluid" src="{% static 'img/task.png' %}" alt="Avatar" style="width:200px;height:200px;">
+                    </div>
+                    <div class="flip-card-back {% if task.important %}bg-success{% endif %}">
+                        {% if task.important %}
+                        <strong>
+                            <h1 class="fw-bold">{{task.title}}</h1>
+                        </strong>
+                        {% else %}
+                        <h1>{{task.title}}</h1>
+                        {% endif %}
+                        <p>{{task.description}}</p>
+                        <p>{{task.user.username}}</p>
+                        <a class="stretched-link text-white" href="{% url 'task_detail' task.id %}">See</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+
+{% endblock %}

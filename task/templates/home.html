@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="jumbotron">
+        <h1 class="display-4">Task Manager</h1>
+        <p class="lead">Welcome to our Task Manager application. Manage your tasks with ease!</p>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Create Tasks</h5>
+                    <p class="card-text">Add new tasks to your to-do list.</p>
+                    <i class="feature-icon text-success bi bi-file-plus"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Edit Tasks</h5>
+                    <p class="card-text">Edit and update your existing tasks.</p>
+                    <i class="feature-icon text-warning bi bi-pencil"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Delete Tasks</h5>
+                    <p class="card-text">Remove completed or unnecessary tasks.</p>
+                    <i class="feature-icon text-danger bi bi-trash"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4  mt-5">
+            <form action="/signup/" method="POST" class="card card-body was-validated">
+                <h1 class="text-center">Signup</h1>
+                {{error}}
+                {% csrf_token %}
+                <div class="mb-3 mt-3">
+                    <label for="uname" class="form-label">Username:</label>
+                    <input type="text" class="form-control" id="id_username" placeholder="Enter username" name="username" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="pwd" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="id_password1" placeholder="Enter password" name="password1" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="pwd" class="form-label">Password confirmation:</label>
+                    <input type="password" class="form-control" id="id_password2" placeholder="Confirm your password" name="password2" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>
+                </div>
+                <button class="btn btn-outline-primary">
+                    Signup
+                </button>
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
